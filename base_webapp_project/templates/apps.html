@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block head_content %}
+{% endblock %}
+
+{% block main_content %}
+
+<div class="default__content">
+    <h1 class="app-page__title">Applications</h1>
+    <section class="apps">
+        {% if access_level == "advanced" %}
+            <a class="u-bare-link" href="{{ url_for('pages.user_manager') }}">
+                <article class="app-card">
+                    <img
+                        class="app-card__image"
+                        src="{{ url_for('static', filename='images/desk_phone_notebook.jpg') }}"
+                        alt="Image of a work desk."
+                    />
+                    <header class="app-card__meta">
+                        <h2 class="app-card__name">User Manager</h2>
+                        <p class="app-card__description">
+                            Manage website users.
+                        </p>
+                    </header>
+                </article>
+            </a>
+        {% endif %}
+        <a class="u-bare-link" href="">
+            <article class="app-card">
+                <img
+                    class="app-card__image"
+                    src="{{ url_for('static', filename='images/person_writing.jpg') }}"
+                    alt="Image of a work desk with phone."
+                />
+                <header class="app-card__meta">
+                    <h2 class="app-card__name">Basic App</h2>
+                    <p class="app-card__description">
+                        This is a basic app example.
+                    </p>
+                </header>
+            </article>
+        </a>
+    </section>
+</div>
+
+{% endblock %}

@@ -1,0 +1,198 @@
+.form {
+  margin: 0 auto;
+  padding: 0.1rem;
+  max-width: 40rem;
+  border: var(--border);
+  font-size: 1.2rem;
+  background: var(--background-color);
+  box-shadow: 0.75rem 0.75rem 0 -0.2rem var(--accent-colour);
+}
+
+.form__container {
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+@media screen and (min-width: 24.75em) {
+  .form__container {
+    padding-left: 2rem;
+  }
+}
+
+@media screen and (min-width: 30em) {
+  .form__container {
+    padding-left: 2.5rem;
+  }
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.form__label {
+  margin-bottom: 0.5rem;
+}
+
+.form__field {
+  outline: none;
+  border: none;
+  border-bottom: 3px solid #fff;
+  font-size: inherit;
+  font-family: inherit;
+
+  padding: 0.75rem 0.5rem;
+  background: var(--background-color);
+}
+
+.form__field:focus {
+  border-bottom: var(--border);
+}
+
+.form__small {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+}
+
+.form__link {
+  text-decoration: none;
+  font-style: italic;
+  color: var(--accent-colour);
+}
+
+.form__link:hover {
+  color: #d05656;
+}
+
+.form__error {
+  margin-top: 0.5rem;
+}
+
+.form__error,
+.form__flash {
+  display: block;
+  padding: 0.5rem;
+  color: var(--text);
+}
+
+.form__error,
+.form__flash--danger {
+  background: var(--accent-colour);
+}
+
+.button--form {
+  margin: 2rem 0 0 auto;
+  padding: 0.75rem 3rem;
+  border-width: 1px;
+  border-color: var(--text-dark);
+  background: var(--background-color);
+}
+
+.button--form:hover {
+  background: var(--background-color-hover);
+}
+
+.form__flash {
+  margin: 0.5rem;
+}
+  
+.form__flash--success {
+  background: var(--accent-colour-2);
+}
+  
+.form__default-content {
+  margin-left: 5rem;
+}
+
+.form-toolbar {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.form-toolbar__container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 30em) {
+  .form-toolbar__container {
+    display: flex;
+    flex-direction: column;    
+    gap: 1rem;
+    justify-content: flex-start;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 30em) {
+  .form-toolbar__group {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 0rem;
+  }
+}
+
+.form-toolbar__label {
+  font-size: 1.5em;
+}
+
+.form-toolbar__field {
+  outline: none;
+  border: none;
+  margin-left: 0.2rem;
+  padding-left: 0.5rem;
+  font-size: 1.5em;
+  font-family: inherit;
+  background: var(--background-color);
+}
+
+.button--form-toolbar {
+  font-size: 1.5em;
+  margin: 0 0 0 auto;
+  padding: 0.05rem 0.5rem;
+  border-width: 1px;
+  border-color: var(--text-dark);
+  background: var(--background-color);
+}
+
+.button--form-toolbar:hover {
+  background: var(--background-color-hover);
+}
+
+.form-toolbar__select-field {
+  outline: none;
+  border: none;
+  font-size: 1.5em;
+  font-family: inherit;
+  background: var(--background-color);
+}
+
+.form-settings__container {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0.5rem;
+  border: var(--border);
+  font-size: 1.5em;
+  background: var(--background-color);
+  box-shadow: 0.75rem 0.75rem 0 -0.2rem var(--accent-color);
+}
+
+.form-settings__content-block {
+  margin-bottom: 0.5rem;
+}
+
+.button--form-settings {
+  width: 100%;
+  margin: 0 0 0 auto;
+  padding: 0.05rem 0.5rem;
+  border-width: 1px;
+  border-color: var(--text-dark);
+  background: var(--background-color);
+}
+
+.button--form-settings:hover {
+  background: var(--background-color-hover);
+}

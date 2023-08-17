@@ -1,0 +1,13 @@
+{% macro render_toolbar_text_field(field) %}
+<div class="form-toolbar__group">
+    {{ field.label(class_="form-toolbar__label") }}
+    {{ field(class_="form-toolbar__field")}}
+</div>
+{% endmacro %}
+
+{% macro render_toolbar_select_field(field) %}
+<div class="form-toolbar__group">
+    {{ field.label(class_="form-toolbar__label") }}
+    {{ field(class_="form-toolbar__select-field")}}
+</div>
+{% endmacro %}

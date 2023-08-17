@@ -1,0 +1,73 @@
+{% from "macros/fields_toolbar.html" import render_toolbar_text_field, render_toolbar_select_field %}
+
+{% extends "layout.html" %}
+
+{% block head_content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}" />
+{% endblock %}
+
+{% block main_content %}
+
+    <div class="default__content">
+        <h1>User Manager</h1>
+        <p class="default__content-block">
+            This application allows you to view and manage the users.
+        </p>
+        <h2>Instructions</h2>
+        <p class="default__content-block">
+            <ul class="default__content-list">
+                <li class="default__content-item">
+                    Must enter a User Email to make any modifications.
+                </li>
+                <li class="default__content-item">
+                    Click Remove to delete the user.
+                </li>
+                <li class="default__content-item">
+                    Change the user's password by entering a new password and clicking Update.
+                </li>
+                <li class="default__content-item">
+                    Change the user's access level by by selecting a new one and clicking Update.
+                </li>
+                <li class="default__content-item">
+                    Update password and access level at the same time.
+                </li>
+            </ul>
+        </p>
+    </div>
+    <form name="users" method="post" novalidate class="form-toolbar">
+        <div class="form-toolbar__container">
+            {{ form.hidden_tag() }}
+    
+            {{ render_toolbar_text_field(form.user_email) }}
+            {{ render_toolbar_text_field(form.new_password) }}
+            {{ render_toolbar_select_field(form.new_access_level) }}
+            {{ form.update_submit(class_="button button--form-toolbar") }}
+            {{ form.remove_submit(class_="button button--form-toolbar") }}
+        </div>
+    </form>
+    <div class="results">
+        {% if users is not none %}
+            <p class="results__heading-black">
+                Current Users: {{ users|length }}
+            </p>
+            <ul class="results__list">
+                {% for user in users %}
+                <li class="results__item-ws">
+                    <p class="results__item-ws-first">
+                        User:
+                        {{ user.email }}
+                    </p>
+                    <p class="results__item-ws-sub">
+                        <span class="emphasis-bold">Access Level:</span> 
+                        {{ user.access_level }}
+                    </p>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="results__heading-black">
+                No Users.
+            </p>
+        {% endif %}
+    </div>
+
+{% endblock %}

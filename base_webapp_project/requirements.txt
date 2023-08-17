@@ -1,0 +1,6 @@
+flask
+passlib
+flask-wtf
+email_validator
+python-dotenv
+sqlalchemy

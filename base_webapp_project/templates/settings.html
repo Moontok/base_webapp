@@ -1,0 +1,45 @@
+{% from "macros/fields.html" import render_text_field %}
+
+{% extends "layout.html" %} 
+
+{% block head_content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}" />
+{% endblock %} 
+
+{% block main_content %}
+    <div class="default__content">
+        <h1>User Settings</h1>
+        <p class="default__content-block">
+            You can make changes to your account here.
+        </p>
+    </div>
+    <form name="settings" method="post" novalidate class="form-settings">
+        <div class="form-settings__container">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% for category, message in messages %}
+                    <span class="form__flash form__flash--{{category}}"> {{ message }}</span>
+                {% endfor %}
+            {% endwith %}            
+            {{ form.hidden_tag() }}          
+            <div class="form-settings__content-block">
+                <span class="emphasis-bold">User Email:</span> {{ user.email }}
+            </div>
+            <div class="form-settings__content-block">
+                    <span class="emphasis-bold">Access Level:</span> {{ user.access_level }}
+            </div>
+            <div class="form-settings__content-block">
+                {{ form.change_password_submit(class_="button button--form-settings") }}
+            </div>
+            <div class="form-settings__content-block">
+                {{ form.delete_account_submit(class_="button button--form-settings") }}
+            </div>
+            <div class="form-settings__content-block">
+                <span class="emphasis-bold">Theme:</span> {{ user.theme }}
+            </div>
+            <div class="form-settings__content-block">
+                {{ form.change_theme_submit(class_="button button--form-settings") }}
+            </div>
+        </div>
+    </form>
+
+{% endblock %}
